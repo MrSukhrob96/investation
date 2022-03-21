@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePassiveIncomesTable extends Migration
+class CreateUserClients extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class CreatePassiveIncomesTable extends Migration
      */
     public function up()
     {
-        Schema::create('passive_incomes', function (Blueprint $table) {
+        Schema::create('user_clients', function (Blueprint $table) {
             $table->id();
-            $table->double("money");
+            $table->foreignId("user_id")->constrained("users");
             $table->timestamps();
         });
     }
@@ -27,6 +27,6 @@ class CreatePassiveIncomesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('passive_incomes');
+        Schema::dropIfExists('table_user_clients');
     }
 }

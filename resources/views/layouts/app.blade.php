@@ -34,7 +34,7 @@
                     <i class="fa fa-phone"></i>+926352444
                 </div>
                 <div class="social-links float-right">
-                    <a href="#" class=""><i class="fa fa-user"></i> &nbsp; Войти</a>
+                    <a href="{{ url('login') }}" class=""><i class="fa fa-user"></i> &nbsp; Войти</a>
                     <a href="#" class="active"><i class="fa fa-search"></i></a>
                 </div>
             </div>
@@ -45,6 +45,7 @@
             <div id="logo" class="pull-left">
                 <img src="./images/logo.png" class="header__logo">
             </div>
+            @auth
             <nav id="nav-menu-container">
                 <ul class="nav-menu">
                     <li class="menu-active"><a href="index.html">Главная</a></li>
@@ -56,6 +57,7 @@
                     <li><a href="#contact">Контакты</a></li>
                 </ul>
             </nav>
+            @endauth
         </div>
     </header>
     @yield('content')

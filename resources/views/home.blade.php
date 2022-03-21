@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+
 <section id="intro">
     <div class="container" data-aos="fade-up">
         <div class="intro-content">
