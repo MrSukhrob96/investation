@@ -45,7 +45,7 @@
             <div id="logo" class="pull-left">
                 <img src="./images/logo.png" class="header__logo">
             </div>
-            @auth
+            @if (url()->current() == '/')
             <nav id="nav-menu-container">
                 <ul class="nav-menu">
                     <li class="menu-active"><a href="index.html">Главная</a></li>
@@ -57,7 +57,7 @@
                     <li><a href="#contact">Контакты</a></li>
                 </ul>
             </nav>
-            @endauth
+            @endif
         </div>
     </header>
     @yield('content')

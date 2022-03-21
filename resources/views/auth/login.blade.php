@@ -4,7 +4,8 @@
 <div class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-12 col-lg-6 col-md-8 col-sm-10">
-            <div class="card p-5 border-0 shadow">
+            <form class="card p-5 border-0 shadow" method="POST" action="{{ url('login') }}">
+                @csrf
                 <div class="form-group mb-3">
                     <label for="exampleFormControlInput1 pb-3">Email</label>
                     <input 
@@ -38,7 +39,7 @@
                 <div class="form-group mb-3">
                     <button class="btn btn-primary px-4 py-2">Sign in</button>
                 </div>
-            </div>
+            </form>
         </div>
     </div>
 </div>

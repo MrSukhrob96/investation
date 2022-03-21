@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card p-5 border-0 shadow">
-                <form action="{{ url('register') }}" method="post">
+                <form method="POST" action="{{ url('register') }}">
                     @csrf
                     <div class="form-row">
                         <div class="form-group mb-3">

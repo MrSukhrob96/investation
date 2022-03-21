@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Refiral extends Model
 {
     use HasFactory;
+
 }

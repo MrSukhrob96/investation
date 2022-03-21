@@ -49,7 +49,6 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
-        dd($data);
         return Validator::make($data, [
             "firstname" => ["required", "max:25", "min:3"],
             "lastname" => ["required", "max:25", "min:3"],
@@ -58,8 +57,8 @@ class RegisterController extends Controller
             "birthday" => ["required", "date"],
             "reference" => ["required"],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ["min:6", "required_with:password_confirmation", "same:password_confirmation"],
-            'password_confirmation' => ['min:8'],
+            'password' => ["required", "min:6", "max:25", "confirmed"],
+            'password_confirmation' => ["required", 'min:8'],
         ]);
     }
 
