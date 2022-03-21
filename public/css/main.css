@@ -77,6 +77,13 @@ h1, h2, h3, h4, h5, h6 {
     -o-transition: 0.3s;
 }
 
+.header__logo{
+    width: 120px;
+    height: 60px;
+    object-fit: cover;
+    object-position: center;
+}
+
 /*--------------------------------------------------------------
   # Section Header Start
 --------------------------------------------------------------*/

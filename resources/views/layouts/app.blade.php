@@ -11,7 +11,6 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -19,26 +18,32 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/owl.carousel.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/ionicons/css/ionicons.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
+
 </head>
 
 <body>
     <section id="topbar" class="d-none d-lg-block">
         <div class="container clearfix">
-            <div class="contact-info float-left">
-                <i class="fa fa-envelope-o"></i> <a href="mailto:contact@gmail.com">info@gmail.com</a>
-                <i class="fa fa-phone"></i>+926352444
-            </div>
-            <div class="social-links float-right">
-                <a href="#" class=""><i class="fa fa-user"></i> &nbsp; Войти</a>
-                <a href="#" class="active"><i class="fa fa-search"></i></a>
+            <div class="row justify-content-between" style="display: flex">
+                <div class="contact-info float-left">
+                    <i class="fa fa-envelope-o"></i> <a href="mailto:contact@gmail.com">info@gmail.com</a>
+                    <i class="fa fa-phone"></i>+926352444
+                </div>
+                <div class="social-links float-right">
+                    <a href="#" class=""><i class="fa fa-user"></i> &nbsp; Войти</a>
+                    <a href="#" class="active"><i class="fa fa-search"></i></a>
+                </div>
             </div>
         </div>
     </section>
     <header id="header">
         <div class="container">
             <div id="logo" class="pull-left">
-                <img src="./assets/img/logo.png">
+                <img src="./images/logo.png" class="header__logo">
             </div>
             <nav id="nav-menu-container">
                 <ul class="nav-menu">
@@ -54,6 +59,10 @@
         </div>
     </header>
     @yield('content')
+
+    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/owl.carousel.min.js') }}" defer></script>
+
 </body>
 
 </html>
