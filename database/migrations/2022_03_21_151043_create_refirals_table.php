@@ -15,6 +15,9 @@ class CreateRefiralsTable extends Migration
     {
         Schema::create('refirals', function (Blueprint $table) {
             $table->id();
+            $table->double("refiral_limit");
+            $table->double("refiral_procent")->default(0);
+            $table->softDeletes();
             $table->timestamps();
         });
     }

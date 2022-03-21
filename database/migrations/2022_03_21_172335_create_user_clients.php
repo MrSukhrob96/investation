@@ -16,6 +16,8 @@ class CreateUserClients extends Migration
         Schema::create('user_clients', function (Blueprint $table) {
             $table->id();
             $table->foreignId("user_id")->constrained("users");
+            $table->foreignId("client_id")->constrained("users");
+            $table->softDeletes();
             $table->timestamps();
         });
     }

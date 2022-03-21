@@ -16,6 +16,9 @@ class CreatePassiveIncomesTable extends Migration
         Schema::create('passive_incomes', function (Blueprint $table) {
             $table->id();
             $table->double("money");
+            $table->foreignId("user_id")->constrained("users");
+            $table->foreignId("refiral_id")->constrained("refirals");
+            $table->softDeletes();
             $table->timestamps();
         });
     }
