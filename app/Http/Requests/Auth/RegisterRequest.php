@@ -13,7 +13,7 @@ class RegisterRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -30,9 +30,10 @@ class RegisterRequest extends FormRequest
             "patronymic" => "required",
             "birthday" => "required|date",
             "reference" => "required",
-            "email"=> "required|email",
-            "password"=> "required|max:50|min:6",
-            "password_confirm"=> "required|some:password"
+            "email" => "required|email",
+            'password' => 'min:6|required_with:password_confirmation|same:password_confirmation',
+            'password_confirmation' => 'min:6'
         ];
     }
+    
 }

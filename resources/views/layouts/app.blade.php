@@ -62,6 +62,13 @@
     </header>
     @yield('content')
 
+    <footer id="footer" class="mt-5">
+        <div class="container">
+            <div class="copyright">
+                &copy; <strong>Company name</strong> 2021
+            </div>
+        </div>
+    </footer>
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{{ asset('js/owl.carousel.min.js') }}" defer></script>
 

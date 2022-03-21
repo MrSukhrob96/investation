@@ -5,8 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card p-5 border-0 shadow">
-                <form action="{{ route('register') }}" method="post">
-                    @method("post")
+                <form action="{{ url('register') }}" method="post">
                     @csrf
                     <div class="form-row">
                         <div class="form-group mb-3">
@@ -74,8 +73,8 @@
                         </div>
                         <div class="form-group mb-3">
                             <label for="exampleFormControlInput1">Password Confirm</label>
-                            <input type="password" class="form-control p-2" id="exampleFormControlInput1" name="password_confirm" placeholder="name@example.com" @error('password_confirm') is-invalid @enderror>
-                            @error('password_confirm')
+                            <input type="password" class="form-control p-2" id="exampleFormControlInput1" name="password_confirmation" placeholder="name@example.com" @error('password_confirmation') is-invalid @enderror>
+                            @error('password_confirmation')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>

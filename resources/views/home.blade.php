@@ -204,12 +204,4 @@
     </section>
 
 </main>
-
-<footer id="footer" class="mt-5">
-    <div class="container">
-        <div class="copyright">
-            &copy; <strong>Company name</strong> 2021
-        </div>
-    </div>
-</footer>
 @endsection
