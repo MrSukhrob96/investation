@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUserClients extends Migration
+class CreateAcctTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,13 @@ class CreateUserClients extends Migration
      */
     public function up()
     {
-        Schema::create('user_clients', function (Blueprint $table) {
+        Schema::create('acct', function (Blueprint $table) {
             $table->id();
+            $table->double("acct_refirial")->default(0);
+            $table->double("acct_invest")->default(0);
+            $table->double("acct_bonus")->default(0);
+            $table->double("acct_privod")->default(0);
             $table->foreignId("user_id")->constrained("users");
-            $table->foreignId("client_id")->constrained("users");
             $table->softDeletes();
             $table->timestamps();
         });
@@ -29,6 +32,6 @@ class CreateUserClients extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('table_user_clients');
+        Schema::dropIfExists('acct');
     }
 }

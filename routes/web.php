@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CabinetController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,11 +14,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get("/cabinet", function(){
-    return view("cabinet");
-});
+Route::get("/cabinet", [CabinetController::class, 'index']);
+Route::get("/cabinet/open_acct", [CabinetController::class, 'openAcctForm']);
+Route::get("/cabinet/users", [CabinetController::class, 'openUsersList']);
+Route::get("/cabinet/investations", [CabinetController::class, 'investationsPage']);
+Route::get("/cabinet/recomended/{refiral}", [CabinetController::class, 'openUsersList'])->name('recomended');
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Auth::routes();
-

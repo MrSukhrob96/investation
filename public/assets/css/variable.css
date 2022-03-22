@@ -1,0 +1,13 @@
+:root {
+    --txtDark03: #444;
+    --txtDark02: #555;
+    --txtDark04: #333;
+    --txtGrean03:rgb(251, 94, 57);
+    --txtGrean04:rgb(243, 86, 51);
+    --txtBlue: #1c5787;
+    /* --txtGrean03: #50d8af; */
+    /* --txtGrean04: #51d8af; */
+    /* --txtBlue: #0c2e8a;  */
+    --borderLeft: #e9e9e9;
+    --bgWhite: #fff;
+  }

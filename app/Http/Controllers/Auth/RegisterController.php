@@ -3,11 +3,14 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Auth\RegisterRequest;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Auth\Events\Registered;
+use Illuminate\Http\JsonResponse;
 
 class RegisterController extends Controller
 {
@@ -54,12 +57,13 @@ class RegisterController extends Controller
             "lastname" => ["required", "max:25", "min:3"],
             "phone" => ["required", "max:15", "min:6"],
             "patronymic" => ["required", "max:15", "min:6"],
-            "birthday" => ["required", "date"],
+            "birthday" => ["required"],
             "reference" => ["required"],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ["required", "min:6", "max:25", "confirmed"],
-            'password_confirmation' => ["required", 'min:8'],
+            "password" => ["required"],
+			"password_confirm" => ["required", "same:password"]
         ]);
+
     }
 
     /**
@@ -71,13 +75,15 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         return User::create([
-            'firsname' => $data['firsname'],
+            'firstname' => $data['firstname'],
             'lastname' => $data['lastname'],
             'patronymic' => $data['patronymic'],
+            'phone' => $data['phone'],
             'birthday' => $data['birthday'],
             'reference' => $data['reference'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
     }
+
 }

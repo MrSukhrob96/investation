@@ -26,14 +26,13 @@ class RegisterRequest extends FormRequest
         return [
             "firstname" => "required|max:25|min:3",
             "lastname" => "required|max:25|min:3",
-            "phone" => "required|max:15|min:6",
             "patronymic" => "required",
-            "birthday" => "required|date",
+            "phone" => "required|max:15|min:6",
+            "birthday" => "required",
             "reference" => "required",
-            "email" => "required|email",
-            'password' => 'min:6|required_with:password_confirmation|same:password_confirmation',
-            'password_confirmation' => 'min:6'
+            "email" => "required|email|unique:users",
+			"password" => "required",
+			"password_confirm" => "required|same:password"
         ];
     }
-    
 }
